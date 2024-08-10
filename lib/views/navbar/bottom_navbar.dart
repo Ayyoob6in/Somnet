@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
+import 'package:somenet/views/estatement/estatement_screen.dart';
 import 'package:somenet/views/home/home_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -16,9 +17,7 @@ class BottomNavbarState extends State<BottomNavbar> {
   // Define the list of pages
   final List<Widget> _pages = [
     const HomeScreen(),
-    const Center(
-      child: Text("Page 2"),
-    ),
+    EStatementScreen(),
     const Center(
       child: Text("Page 3"),
     ),

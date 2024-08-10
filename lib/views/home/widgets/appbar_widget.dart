@@ -34,7 +34,7 @@ AppBar buildAppBar(BuildContext context) {
               Row(
                 children: [
                   CircleAvatar(
-                      radius: 2.w, // Use Sizer for responsive radius
+                      radius: 3.w, // Use Sizer for responsive radius
                       backgroundColor: sBlack.withOpacity(0.1),
                       child: Icon(
                         Icons.phone,
@@ -45,7 +45,7 @@ AppBar buildAppBar(BuildContext context) {
                   Text(
                     '615 209444',
                     style: TextStyle(
-                      fontSize: 10.sp, // Use Sizer for responsive font size
+                      fontSize: 14.sp, // Use Sizer for responsive font size
                       color: Colors.white70,
                     ),
                   ),

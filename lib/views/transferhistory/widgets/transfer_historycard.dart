@@ -28,7 +28,7 @@ class TransferHistorycard extends StatelessWidget {
                   color: colorblue,
                   size: screenWidth * 0.06, // Responsive icon size
                 ),
-                Container(
+                SizedBox(
                   height: screenWidth * 0.06, // Responsive height
                   child: const VerticalDivider(
                     color: Colors.grey,
