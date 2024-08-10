@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/views/home/home_screen.dart';
 
@@ -14,8 +15,8 @@ class BottomNavbarState extends State<BottomNavbar> {
 
   // Define the list of pages
   final List<Widget> _pages = [
-    HomeScreen(),
-    Center(
+    const HomeScreen(),
+    const Center(
       child: Text("Page 2"),
     ),
     const Center(
@@ -24,7 +25,7 @@ class BottomNavbarState extends State<BottomNavbar> {
     const Center(
       child: Text("Page 4"),
     ),
-    Center(
+    const Center(
       child: Text("Page 5"),
     ),
   ];
@@ -45,10 +46,10 @@ class BottomNavbarState extends State<BottomNavbar> {
         ),
         if (_selectedIndex == index)
           Container(
-            width: 6,
-            height: 6,
-            margin: EdgeInsets.only(top: 2),
-            decoration: BoxDecoration(
+            width: 6.sw,
+            height: 0.7.sh,
+            margin: const EdgeInsets.only(top: 2),
+            decoration: const BoxDecoration(
               color: Colors.blue,
               shape: BoxShape.circle,
             ),

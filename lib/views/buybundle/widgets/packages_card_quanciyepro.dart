@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart'; // Import Sizer
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/images/images.dart';
 
-class PackageCardNormalQuanciyePro extends StatelessWidget {
+class PackageCardQuanciyePro extends StatelessWidget {
   final String data;
   final String subData;
   final String packageType;
@@ -10,7 +11,7 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
   final String price;
   final VoidCallback onTap;
 
-  const PackageCardNormalQuanciyePro({
+  const PackageCardQuanciyePro({
     super.key,
     required this.data,
     required this.packageType,
@@ -23,7 +24,8 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      padding: EdgeInsets.symmetric(
+          vertical: 1.h, horizontal: 4.w), // Use Sizer for padding
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -35,25 +37,26 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 2,
                 blurRadius: 5,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3),
               ),
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(4.w), // Use Sizer for padding
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ListTile(
+                  contentPadding: EdgeInsets.zero,
                   leading: Image.asset(
                     buybunldelistnormallogo,
-                    height: 30,
-                    width: 30,
+                    height: 3.9.h, // Scale with Sizer
+                    width: 3.9.h, // Scale with Sizer
                   ),
                   title: Text(
                     data,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 15.sp, // Scale with Sizer
                       fontWeight: FontWeight.bold,
                       color: colorblue,
                     ),
@@ -61,7 +64,7 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
                   subtitle: Text(
                     subData,
                     style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 13.sp, // Scale with Sizer
                       fontWeight: FontWeight.bold,
                       color: colorblue,
                     ),
@@ -69,47 +72,12 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
                   trailing: Text(
                     packageType,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 14.sp, // Scale with Sizer
                       fontWeight: FontWeight.w600,
                       color: Colors.grey,
                     ),
                   ),
                 ),
-                // Row(
-                //   children: [
-                //     Image.asset(buybunldelistnormallogo),
-                //     Column(
-                //       crossAxisAlignment: CrossAxisAlignment.center,
-                //       children: [
-                //         Text(
-                //           data,
-                //           style: TextStyle(
-                //             fontSize: 18,
-                //             fontWeight: FontWeight.bold,
-                //             color: colorblue,
-                //           ),
-                //         ),
-                //         Text(
-                //           subData,
-                //           style: TextStyle(
-                //             fontSize: 12,
-                //             fontWeight: FontWeight.w600,
-                //             color: colorblue,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //     Spacer(),
-                //     Text(
-                //       packageType,
-                //       style: TextStyle(
-                //         fontSize: 12,
-                //         fontWeight: FontWeight.w600,
-                //         color: Colors.grey,
-                //       ),
-                //     ),
-                //   ],
-                // ),
                 const Divider(
                   thickness: 0.5,
                 ),
@@ -120,32 +88,32 @@ class PackageCardNormalQuanciyePro extends StatelessWidget {
                         const Icon(
                           Icons.schedule,
                           color: Colors.orange,
-                          size: 16.0,
+                          size: 25.0,
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 1.5.w), // Use Sizer for spacing
                         Text(
                           duration,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 14.sp, // Scale with Sizer
                             color: Colors.orange,
                           ),
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       price,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp, // Scale with Sizer
                         fontWeight: FontWeight.bold,
                         color: colorblue,
                       ),
                     ),
-                    const SizedBox(width: 5),
+                    SizedBox(width: 2.w), // Use Sizer for spacing
                     Icon(
                       Icons.arrow_forward,
                       color: colorblue,
-                      size: 15,
+                      size: 17.sp, // Scale with Sizer
                     ),
                   ],
                 ),

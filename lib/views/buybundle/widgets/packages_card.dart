@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart'; // Import Sizer
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/images/images.dart';
 
@@ -21,7 +22,8 @@ class PackageCardNormal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      padding: EdgeInsets.symmetric(
+          vertical: 1.h, horizontal: 4.w), // Use Sizer for padding
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -38,27 +40,31 @@ class PackageCardNormal extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(4.w), // Use Sizer for padding
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Image.asset(buybunldelistnormallogo),
-                    SizedBox(width: 10),
+                    Image.asset(
+                      buybunldelistnormallogo,
+                      height: 3.5.h, // Scale with Sizer
+                      width: 3.5.h, // Scale with Sizer
+                    ),
+                    SizedBox(width: 2.w), // Use Sizer for spacing
                     Text(
                       data,
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16.sp, // Scale with Sizer
                         fontWeight: FontWeight.bold,
                         color: colorblue,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       packageType,
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14.sp, // Scale with Sizer
                         fontWeight: FontWeight.w600,
                         color: Colors.grey,
                       ),
@@ -72,16 +78,16 @@ class PackageCardNormal extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.schedule,
                           color: Colors.orange,
-                          size: 16.0,
+                          size: 20.sp,
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 1.5.w), // Use Sizer for spacing
                         Text(
                           duration,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 14.sp, // Scale with Sizer
                             color: Colors.orange,
                           ),
                         ),
@@ -91,16 +97,16 @@ class PackageCardNormal extends StatelessWidget {
                     Text(
                       price,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp, // Scale with Sizer
                         fontWeight: FontWeight.bold,
                         color: colorblue,
                       ),
                     ),
-                    const SizedBox(width: 5),
+                    SizedBox(width: 2.w), // Use Sizer for spacing
                     Icon(
                       Icons.arrow_forward,
                       color: colorblue,
-                      size: 15,
+                      size: 17.sp, // Scale with Sizer
                     ),
                   ],
                 ),

@@ -152,8 +152,8 @@ class OTPScreen extends StatelessWidget {
 
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => BottomNavbar()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavbar()));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,

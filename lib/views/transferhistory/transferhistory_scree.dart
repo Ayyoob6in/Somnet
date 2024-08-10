@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/views/transferhistory/widgets/transfer_historycard.dart';
 
@@ -11,9 +12,9 @@ class TransferhistoryScreen extends StatelessWidget {
       backgroundColor: appBackgroundColor,
       appBar: AppBar(
         backgroundColor: sWhite,
-        title: const Text(
+        title: Text(
           "Transfer History",
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14.spa),
         ),
       ),
       body: ListView.builder(

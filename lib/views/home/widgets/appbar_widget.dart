@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart'; // Import Sizer
 import 'package:somenet/utils/constants/colors/colors.dart';
-import 'package:somenet/utils/constants/size/width.dart';
 import 'package:somenet/utils/images/images.dart';
 
 AppBar buildAppBar(BuildContext context) {
@@ -9,24 +9,24 @@ AppBar buildAppBar(BuildContext context) {
     backgroundColor: colorblue,
     automaticallyImplyLeading: false,
     flexibleSpace: Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(4.w), // Use Sizer for responsive padding
       child: Row(
         children: [
-          const CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage(
+          CircleAvatar(
+            radius: 7.w, // Use Sizer for responsive radius
+            backgroundImage: const AssetImage(
               profileimage,
             ),
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: 4.w), // Use Sizer for responsive spacing
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Muhsin Vivacom',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 14.sp, // Use Sizer for responsive font size
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -34,18 +34,18 @@ AppBar buildAppBar(BuildContext context) {
               Row(
                 children: [
                   CircleAvatar(
-                      radius: 8,
+                      radius: 2.w, // Use Sizer for responsive radius
                       backgroundColor: sBlack.withOpacity(0.1),
                       child: Icon(
                         Icons.phone,
-                        size: 10,
+                        size: 2.5.w, // Use Sizer for responsive icon size
                         color: sWhite,
                       )),
-                  sw10,
-                  const Text(
+                  SizedBox(width: 2.w), // Use Sizer for responsive spacing
+                  Text(
                     '615 209444',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 10.sp, // Use Sizer for responsive font size
                       color: Colors.white70,
                     ),
                   ),
@@ -55,15 +55,20 @@ AppBar buildAppBar(BuildContext context) {
           ),
           const Spacer(),
           Container(
-            height: 40,
-            width: 40,
+            height: 10.w, // Use Sizer for responsive height
+            width: 10.w, // Use Sizer for responsive width
             decoration: BoxDecoration(
-                color: sWhite, borderRadius: BorderRadius.circular(10)),
+                color: sWhite,
+                borderRadius: BorderRadius.circular(
+                    2.w)), // Use Sizer for responsive border radius
             child: IconButton(
               onPressed: () {
                 // Handle message icon tap
               },
-              icon: const Icon(Icons.message_outlined),
+              icon: Icon(
+                Icons.message_outlined,
+                size: 6.w, // Use Sizer for responsive icon size
+              ),
               color: colorblue,
             ),
           ),

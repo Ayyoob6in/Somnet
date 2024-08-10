@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/views/buybundle/widgets/normal_packages.dart';
 import 'package:somenet/views/buybundle/widgets/quanicyepro_packages.dart';
@@ -11,9 +12,12 @@ class BuybundleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: sWhite,
-        title: const Text(
+        title: Text(
           "Buy Bundle",
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp, // Responsive font size
+          ),
         ),
       ),
       body: DefaultTabController(
@@ -27,14 +31,14 @@ class BuybundleScreen extends StatelessWidget {
                 unselectedLabelColor: Colors.lightBlue[100],
                 indicatorColor: colorblue,
                 dividerColor: sWhite,
-                indicatorWeight: 3.0,
-                labelStyle: const TextStyle(
+                indicatorWeight: 0.3.h, // Responsive indicator weight
+                labelStyle: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.0,
+                  fontSize: 16.sp, // Responsive label size
                 ),
-                unselectedLabelStyle: const TextStyle(
+                unselectedLabelStyle: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 13.0,
+                  fontSize: 13.sp, // Responsive unselected label size
                 ),
                 tabs: const [
                   Tab(text: "Normal"),

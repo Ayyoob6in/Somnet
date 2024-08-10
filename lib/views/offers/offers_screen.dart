@@ -19,7 +19,7 @@ class OffersScreen extends StatelessWidget {
             itemCount: 15,
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return PackageCardNormalQuanciyePro(
+              return PackageCardQuanciyePro(
                 data: '4.5 GB +',
                 subData: "104 Min + 26 SMS",
                 packageType: 'Normal Package',

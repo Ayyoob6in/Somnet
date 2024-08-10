@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:somenet/controller/provider/home/home_provider.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/constants/size/height.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: appBackgroundColor,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(10.sh),
           child: buildAppBar(context),
         ),
         body: SingleChildScrollView(
