@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/views/estatement/estatement_screen.dart';
 import 'package:somenet/views/home/home_screen.dart';
+import 'package:somenet/views/selfsupport/self_support_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -18,9 +19,7 @@ class BottomNavbarState extends State<BottomNavbar> {
   final List<Widget> _pages = [
     const HomeScreen(),
     EStatementScreen(),
-    const Center(
-      child: Text("Page 3"),
-    ),
+    SelfSupportScreen(),
     const Center(
       child: Text("Page 4"),
     ),

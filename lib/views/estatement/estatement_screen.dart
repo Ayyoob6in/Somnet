@@ -17,7 +17,7 @@ class EStatementScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 11.h, left: 7.w),
+              padding: EdgeInsets.only(top: 7.h, left: 7.w),
               child: const CustomHeadingWidget("E - Statement"),
             ),
             Center(
