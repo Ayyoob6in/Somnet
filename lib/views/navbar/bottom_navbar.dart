@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
+import 'package:somenet/views/createticket/create_ticket_screen.dart';
 import 'package:somenet/views/estatement/estatement_screen.dart';
 import 'package:somenet/views/home/home_screen.dart';
+import 'package:somenet/views/invite/invite_a_friend.dart';
+import 'package:somenet/views/notification/notification_screen.dart';
 import 'package:somenet/views/selfsupport/self_support_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -18,14 +21,10 @@ class BottomNavbarState extends State<BottomNavbar> {
   // Define the list of pages
   final List<Widget> _pages = [
     const HomeScreen(),
-    EStatementScreen(),
-    SelfSupportScreen(),
-    const Center(
-      child: Text("Page 4"),
-    ),
-    const Center(
-      child: Text("Page 5"),
-    ),
+    const EStatementScreen(),
+    const SelfSupportScreen(),
+    const NotificationScreen(),
+    const InviteAFriendScreen()
   ];
 
   void _onItemTapped(int index) {

@@ -13,20 +13,20 @@ Widget customButton({
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
         shadowColor: sGrey,
-        elevation: 3,
+        elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius:
               BorderRadius.circular(10.sp), // Responsive border radius
         ),
-        padding: EdgeInsets.symmetric(
-            vertical: 2.h, horizontal: 15.w), // Responsive padding
+        // padding: EdgeInsets.symmetric(
+        //     vertical: 1.5.h, horizontal: 15.w), // Responsive padding
       ),
       onPressed: onPress,
       child: Center(
         child: Text(
           text,
           style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 13.sp,
               color: sWhite,
               fontWeight: FontWeight.w600), // Responsive text size
         ),

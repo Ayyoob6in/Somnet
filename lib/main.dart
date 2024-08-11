@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart'; // Import Sizer package
+import 'package:somenet/controller/provider/createticket/create_ticket_prrovider.dart';
 import 'package:somenet/controller/provider/estatement/estatement_provider.dart';
 import 'package:somenet/controller/provider/home/home_provider.dart';
 import 'package:somenet/controller/provider/login/login_provider.dart';
+import 'package:somenet/controller/provider/userprofile/user_profile.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/views/login/login_screen.dart';
 
@@ -20,7 +22,9 @@ void main() {
         // Provider for home state
         ChangeNotifierProvider(create: (context) => HomeState()),
 
-        ChangeNotifierProvider(create: (context) => EstatementState())
+        ChangeNotifierProvider(create: (context) => EstatementState()),
+        ChangeNotifierProvider(create: (context) => UserProfileProvider()),
+        ChangeNotifierProvider(create: (context) => CreateTicketProvider())
       ],
       // Child widget of the providers
       child: const MyApp(),

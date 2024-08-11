@@ -6,3 +6,4 @@ const myvasListIcon = "assets/images/myvaslisticon.png";
 const selfsupportkey = "assets/images/selfsupport_key.png";
 const customfeedbackIcon = "assets/images/customfeedbackicon.png";
 const ticketicon = "assets/images/ticket.png";
+const inviteafriendIcon = "assets/images/ivite a frinedicon.png";

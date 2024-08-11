@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/images/images.dart';
+import 'package:somenet/views/customersfeedback/customers_feed_back.dart';
+import 'package:somenet/views/pinpuk/pin_puk_screen.dart';
 import 'package:somenet/views/selfsupport/widgets/self_supportcard_widget.dart';
+import 'package:somenet/views/ticket/ticket_screen.dart';
 import 'package:somenet/views/widgets/custom_heading_widget.dart';
 
 class SelfSupportScreen extends StatelessWidget {
@@ -10,6 +13,22 @@ class SelfSupportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List title = ["PIN/PUK Code", "Customer Feedbacks", "Tickets"];
+    final List icon = [selfsupportkey, customfeedbackIcon, ticketicon];
+    final List ontap = [
+      () {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const PinPukScreen()));
+      },
+      () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const CustomersFeedBAckScreen()));
+      },
+      () {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const TicketsScreen()));
+      }
+    ];
     return Scaffold(
         backgroundColor: appBackgroundColor,
         body: Column(
@@ -35,7 +54,3 @@ class SelfSupportScreen extends StatelessWidget {
         ));
   }
 }
-
-final List title = ["PIN/PUK Code", "Customer Feedbacks", "Tickets"];
-final List icon = [selfsupportkey, customfeedbackIcon, ticketicon];
-final List ontap = [() {}, () {}, () {}];
