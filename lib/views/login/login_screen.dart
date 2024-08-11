@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:somenet/controller/provider/login/login_provider.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
+import 'package:somenet/utils/images/images.dart';
 import 'package:somenet/views/login/widgets/custom_textfield.dart';
 import 'package:somenet/views/login/widgets/first_section.dart';
 import 'package:somenet/views/otp/otp_screen.dart';
@@ -19,39 +20,60 @@ class LoginScreen extends StatelessWidget {
     final loginState = Provider.of<LoginState>(context);
 
     return Scaffold(
-      backgroundColor: appBackgroundColor,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Stack(
         children: [
-          const LoginScreenFirstSection(),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(screenWidth * 0.05), // Responsive padding
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildLanguageSelector(loginState, screenWidth),
-                  _buildPhoneNumberField(loginState, screenWidth),
-                  _buildTermsAndConditions(loginState, screenWidth),
-                  SizedBox(height: screenHeight * 0.02), // Responsive spacing
-                  _buildSignInButton(context, screenWidth),
-                  SizedBox(height: screenHeight * 0.03), // Responsive spacing
-                  _buildSignUpLink(screenWidth),
-                ],
+          // Background image
+
+          Container(
+            decoration: BoxDecoration(
+              color: sBlack,
+              image: DecorationImage(
+                image: AssetImage(authbackgorundimage),
+                fit: BoxFit.cover, // Ensures the image covers the entire screen
               ),
             ),
+          ),
+
+          // Foreground content
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const LoginScreenFirstSection(),
+              Expanded(
+                child: Container(
+                  padding:
+                      EdgeInsets.all(screenWidth * 0.05), // Responsive padding
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildLanguageSelector(loginState, screenWidth),
+                      _buildPhoneNumberField(loginState, screenWidth),
+                      _buildTermsAndConditions(loginState, screenWidth),
+                      SizedBox(
+                          height: screenHeight * 0.02), // Responsive spacing
+                      _buildSignInButton(context, screenWidth),
+                      SizedBox(
+                          height: screenHeight * 0.03), // Responsive spacing
+                      _buildSignUpLink(screenWidth),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
+
+  // Your build methods (like _buildLanguageSelector, _buildPhoneNumberField, etc.)
 
   Widget _buildLanguageSelector(LoginState loginState, double screenWidth) {
     return Column(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
-import 'package:somenet/views/createticket/create_ticket_screen.dart';
+import 'package:somenet/utils/images/images.dart';
+import 'package:somenet/views/divider/divider.dart';
 import 'package:somenet/views/estatement/estatement_screen.dart';
 import 'package:somenet/views/home/home_screen.dart';
-import 'package:somenet/views/invite/invite_a_friend.dart';
 import 'package:somenet/views/notification/notification_screen.dart';
 import 'package:somenet/views/selfsupport/self_support_screen.dart';
 
@@ -17,19 +17,23 @@ class BottomNavbar extends StatefulWidget {
 
 class BottomNavbarState extends State<BottomNavbar> {
   int _selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  // Define the list of pages
   final List<Widget> _pages = [
     const HomeScreen(),
     const EStatementScreen(),
     const SelfSupportScreen(),
     const NotificationScreen(),
-    const InviteAFriendScreen()
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      if (index == 4) {
+        // Open drawer from the right side
+        _scaffoldKey.currentState?.openEndDrawer();
+      } else {
+        _selectedIndex = index;
+      }
     });
   }
 
@@ -58,7 +62,11 @@ class BottomNavbarState extends State<BottomNavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey, // Assign the key to the Scaffold
       backgroundColor: appBackgroundColor,
+      endDrawer: buildCustomDrawer(
+          context: context,
+          onTap: _onItemTapped), // Use endDrawer to open from the right side
       body: Center(
         child: _pages[_selectedIndex], // Display the selected page
       ),
@@ -100,4 +108,6 @@ class BottomNavbarState extends State<BottomNavbar> {
       ),
     );
   }
+
+  // Custom Drawer
 }

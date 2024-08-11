@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart'; // Import Sizer
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/images/images.dart';
+import 'package:somenet/views/chat/chat_screen.dart';
 
 AppBar buildAppBar(BuildContext context) {
   return AppBar(
@@ -63,6 +64,8 @@ AppBar buildAppBar(BuildContext context) {
                     2.w)), // Use Sizer for responsive border radius
             child: IconButton(
               onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ChatScreen()));
                 // Handle message icon tap
               },
               icon: Icon(
