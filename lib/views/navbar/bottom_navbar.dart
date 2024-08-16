@@ -191,9 +191,7 @@ class BottomNavbarState extends State<BottomNavbar> {
           ),
           // Drawer items
           ListTile(
-            onTap: () {
-              Navigator.pop(context);
-            },
+            onTap: () {},
             leading:
                 CircleAvatar(radius: 02.h, child: Image.asset(drawehomeIcon)),
             title: const Text('Home', style: TextStyle(color: Colors.black)),
