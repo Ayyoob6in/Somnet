@@ -22,7 +22,7 @@ class RatingFormState extends State<RatingForm> {
     return Padding(
       padding: EdgeInsets.all(2.w),
       child: Container(
-        height: 75.h,
+        height: 120.h,
         decoration: BoxDecoration(
           color: sWhite,
           borderRadius: BorderRadius.circular(10),
@@ -86,8 +86,9 @@ class RatingFormState extends State<RatingForm> {
                     return IconButton(
                       icon: Icon(
                         index < selectedRating ? Icons.star : Icons.star_border,
-                        color:
-                            index < selectedRating ? Colors.blue : Colors.grey,
+                        color: index < selectedRating
+                            ? raringStarColor
+                            : Colors.grey,
                       ),
                       onPressed: () {
                         setState(() {
@@ -99,8 +100,16 @@ class RatingFormState extends State<RatingForm> {
                 ),
                 SizedBox(width: 2.w),
                 Text(
-                  selectedRating == 4 ? 'Very Good' : '',
-                  style: TextStyle(fontSize: 12.sp),
+                  selectedRating == 4
+                      ? 'Very Good'
+                      : selectedRating == 3
+                          ? 'Good'
+                          : selectedRating == 2
+                              ? 'Average'
+                              : selectedRating == 1
+                                  ? 'Bad'
+                                  : 'Awsome',
+                  style: TextStyle(fontSize: 17.sp),
                 ),
               ],
             ),

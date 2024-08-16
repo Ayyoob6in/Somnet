@@ -30,6 +30,7 @@ class BuybundleScreen extends StatelessWidget {
                 labelColor: colorblue,
                 unselectedLabelColor: Colors.lightBlue[100],
                 indicatorColor: colorblue,
+
                 dividerColor: sWhite,
                 indicatorWeight: 0.3.h, // Responsive indicator weight
                 labelStyle: TextStyle(

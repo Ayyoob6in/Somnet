@@ -83,6 +83,7 @@ class HomeScreen extends StatelessWidget {
   // Promotion Page Widget
   Widget _buildPromotionPage() {
     return Container(
+      margin: EdgeInsets.only(right: 1.w),
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.circular(20),

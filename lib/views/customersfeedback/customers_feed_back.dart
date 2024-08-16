@@ -25,7 +25,7 @@ class CustomersFeedBAckScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            RatingForm(),
+            Expanded(child: RatingForm()),
             SizedBox(height: 1.h),
             customButton(
               onPress: () {},

@@ -1,0 +1,17 @@
+{
+  "@@locale": "en",
+  "language": "Language",
+  "english": "English",
+  "somali": "Somali",
+  "helloWorld": "Hello World!",
+  "phoneNumber": "Phone Number",
+  "login": "Login",
+  "termsAndConditions": "Terms and Conditions",
+  "iAccept": "I Accept",
+  "signIn": "Sign In",
+  "signUp": " Sign Up",
+  "dontHaveAnAccount": "Dont Have an Account"
+
+
+
+}

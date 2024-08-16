@@ -1,33 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:somenet/model/login_phone_number_status/login_phone_number_status.dart';
+import 'package:somenet/service/auth/auth_service.dart';
 
 class LoginState with ChangeNotifier {
-  // Private state variables
+  LoginState({required this.authService});
+
+  final AuthService authService;
+  LoginPhoneNumberStatus? _loginPhoneNumberStatus;
+  bool _isLoading = false;
+  String? _errorMessage;
   bool _isEnglishSelected = true;
   bool _isTermsAccepted = false;
-  final TextEditingController _phoneController =
-      TextEditingController(); // Private field
+  final TextEditingController _phoneController = TextEditingController();
 
-  // Public getters
+  LoginPhoneNumberStatus? get loginPhoneNumberStatus => _loginPhoneNumberStatus;
+  bool get isLoading => _isLoading;
+  String? get errorMessage => _errorMessage;
   bool get isEnglishSelected => _isEnglishSelected;
   bool get isTermsAccepted => _isTermsAccepted;
-  TextEditingController get phoneController =>
-      _phoneController; // Correct getter
+  TextEditingController get phoneController => _phoneController;
 
-  // Toggle language selection
   void toggleLanguage() {
     _isEnglishSelected = !_isEnglishSelected;
-    notifyListeners(); // Notify listeners of the change
+
+    notifyListeners();
   }
 
-  // Toggle terms and conditions acceptance
   void toggleTermsAccepted(bool value) {
     _isTermsAccepted = value;
-    notifyListeners(); // Notify listeners of the change
+    notifyListeners();
   }
+
+  Future<void> validatePhoneNumber(String phoneNumber) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      _loginPhoneNumberStatus =
+          await authService.fetchvalidatenumber(phoneNumber);
+    } catch (e) {
+      _errorMessage = e.toString(); // Store the error message
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  String? validatePhoneNumberFormat(String phoneNumber) {
+    if (phoneNumber.isEmpty) {
+      return 'Phone number cannot be empty';
+    } else if (phoneNumber.length < 9) {
+      return 'Phone number must be at least 9 digits';
+    }
+    return null;
+  }
+
+  Locale locale = Locale('en'); // Default English
 
   @override
   void dispose() {
-    _phoneController.dispose(); // Dispose of the private controller
+    _phoneController.dispose();
     super.dispose();
   }
 }

@@ -1,0 +1,15 @@
+{
+  "@@locale": "so",
+  "language": "Af Soomaali",
+  "english": "Ingiriisi",
+  "somali": "Soomaali",
+  "helloWorld": "Salaan Adduunka!",
+  "phoneNumber": "Lambarka Telefoonka",
+  "login": "Gali",
+  "termsAndConditions": "Shuruudaha iyo Xaaladaha",
+  "iAccept": "Waxaan Aqbalay",
+  "signIn": "Gali",
+  "signUp": " Is-qor",
+
+  "dontHaveAnAccount": "Xisaab ma haysatid?"
+}

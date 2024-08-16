@@ -49,7 +49,7 @@ class InviteAFriendScreen extends StatelessWidget {
               ],
             ),
           ),
-          customButton(context: context, onPress: () {}, text: "Submit")
+          customButton(context: context, onPress: () {}, text: "Share")
         ]));
   }
 }

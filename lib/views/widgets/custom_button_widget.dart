@@ -26,7 +26,7 @@ Widget customButton({
         child: Text(
           text,
           style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 2.h,
               color: sWhite,
               fontWeight: FontWeight.w600), // Responsive text size
         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+import 'package:somenet/l10n/app_localizations.dart';
 import 'package:somenet/utils/constants/colors/colors.dart';
 import 'package:somenet/utils/images/images.dart';
 
@@ -8,13 +10,13 @@ class LoginScreenFirstSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 350,
       decoration: BoxDecoration(color: appBackgroundColor),
       child: Column(
         children: [
           Expanded(
             child: Center(
-              child: Image.asset(applogo, height: 100),
+              child: Image.asset(applogo, height: 10.h),
             ),
           ),
           Align(
@@ -23,7 +25,7 @@ class LoginScreenFirstSection extends StatelessWidget {
               padding:
                   const EdgeInsets.only(bottom: 16.0), // Add padding if needed
               child: Text(
-                'Login',
+                AppLocalizations.of(context).login,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

@@ -8,3 +8,4 @@ Color sGrey = Colors.grey;
 Color sBlack = Colors.black;
 Color buttonColor = const Color(0xFF39ABE2);
 Color sBlue = Colors.blue;
+Color raringStarColor = const Color(0xFF97D700);

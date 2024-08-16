@@ -54,7 +54,7 @@ class UserProfileScreenState extends State<UserProfileScreen> {
           child: Column(
             children: [
               Container(
-                height: 88.h,
+                height: 95.h,
                 padding: EdgeInsets.all(16.sp),
                 decoration: BoxDecoration(
                   color: Colors.white,
